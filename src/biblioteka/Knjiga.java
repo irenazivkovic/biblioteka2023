@@ -1,6 +1,7 @@
 package biblioteka;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Knjiga {
 
@@ -76,14 +77,7 @@ public class Knjiga {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((autori == null) ? 0 : autori.hashCode());
-		result = prime * result + (int) (isbn ^ (isbn >>> 32));
-		result = prime * result + izdanje;
-		result = prime * result + ((izdavac == null) ? 0 : izdavac.hashCode());
-		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
-		return result;
+		return Objects.hash(isbn);
 	}
 
 	@Override
@@ -95,26 +89,7 @@ public class Knjiga {
 		if (getClass() != obj.getClass())
 			return false;
 		Knjiga other = (Knjiga) obj;
-		if (autori == null) {
-			if (other.autori != null)
-				return false;
-		} else if (!autori.equals(other.autori))
-			return false;
-		if (isbn != other.isbn)
-			return false;
-		if (izdanje != other.izdanje)
-			return false;
-		if (izdavac == null) {
-			if (other.izdavac != null)
-				return false;
-		} else if (!izdavac.equals(other.izdavac))
-			return false;
-		if (naziv == null) {
-			if (other.naziv != null)
-				return false;
-		} else if (!naziv.equals(other.naziv))
-			return false;
-		return true;
+		return isbn == other.isbn;
 	}
 	
 	
