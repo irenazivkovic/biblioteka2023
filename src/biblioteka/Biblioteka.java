@@ -4,9 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import biblioteka.interfejs.BibliotekaInterfejs;
-
+/**
+ * Implementira biblioteku, pri cemu je
+ * lista sa knjigama implementirana preko ArrayList klase
+ *  
+ * @author Irena
+ * @since 0.9.0
+ */
 public class Biblioteka implements BibliotekaInterfejs{
 
+	/**
+	 * Lista sa knjigama - Arraylist implementacija
+	 * 
+	 * @see biblioteka.Knjiga
+	 */
 	private List<Knjiga> knjige = new ArrayList<Knjiga>();
 	
 	@Override
